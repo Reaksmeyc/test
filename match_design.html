@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Match Cards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #e5e7eb; /* A very light gray to match the image */
+        }
+        .card-container {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            /* background-color: #fff; */
+            background-color: #d4af37;
+        }
+        .card-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .image-overlay {
+            position: relative;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+        .image-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+        }
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .badge-live {
+            background-color: #ef4444; /* red-500 from Tailwind */
+            color: #fff;
+            border-radius: 4px;
+            padding: 2px 8px;
+            text-transform: capitalize;
+        }
+        .badge-hot {
+            background-color: #dc2626; /* A slightly deeper red to match the "HOT" badge */
+            color: #fff;
+            border-radius: 4px;
+        }
+        .icon {
+            filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
+        }
+    </style>
+</head>
+<body class="p-8">
+
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2">
+
+            <!-- Card 1: Live Match -->
+            <div class="card-container">
+                <div class="image-overlay" style="background-image: url('https://placehold.co/600x400/2563eb/fff?text=Basketball')">
+                    <span class="badge badge-hot z-10">HOT</span>
+                    <span class="badge badge-live bottom-2 right-2 top-auto z-10">LIVE</span>
+                    <div class="absolute bottom-4 left-4 z-10 flex items-center gap-2 text-white">
+                        <img src="https://placehold.co/24x24/000000/fff?text=%23" alt="Icon" class="icon w-6 h-6 rounded-full">
+                        <p class="font-bold">Team A vs Team B</p>
+                    </div>
+                </div>
+                <div class="p-4 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.555 13.911l-1.465-1.465a1 1 0 010-1.414l5.657-5.657a1 1 0 011.414 0l1.465 1.465a1 1 0 010 1.414L7.414 12.5a1 1 0 01-1.414 0l-1.445-1.445a1 1 0 010-1.414L4.852 9.07a1 1 0 011.414 0l5.657 5.657a1 1 0 010 1.414l-1.465 1.465a1 1 0 01-1.414 0L5.555 13.911z"></path>
+                        </svg>
+                        <span class="text-sm text-gray-900 font-bold">BLV NONAME</span>
+                    </div>
+                    <button class="px-4 py-2 text-sm font-medium text-white bg-gray-900 hover:bg-blue-600 rounded-full transition-colors duration-200">
+                        View
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2: Upcoming Match (Scheduled) -->
+            <div class="card-container">
+                <div class="image-overlay" style="background-image: url('https://placehold.co/600x400/10b981/fff?text=eSports')">
+                    <span class="badge badge-hot z-10">HOT</span>
+                    <div class="absolute bottom-4 left-4 z-10 flex items-center gap-2 text-white">
+                        <img src="https://placehold.co/24x24/000000/fff?text=%23" alt="Icon" class="icon w-6 h-6 rounded-full">
+                        <p class="font-bold">Team C vs Team D</p>
+                    </div>
+                </div>
+                <div class="p-4 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.555 13.911l-1.465-1.465a1 1 0 010-1.414l5.657-5.657a1 1 0 011.414 0l1.465 1.465a1 1 0 010 1.414L7.414 12.5a1 1 0 01-1.414 0l-1.445-1.445a1 1 0 010-1.414L4.852 9.07a1 1 0 011.414 0l5.657 5.657a1 1 0 010 1.414l-1.465 1.465a1 1 0 01-1.414 0L5.555 13.911z"></path>
+                        </svg>
+                        <span class="text-sm text-gray-900 font-bold">BLV NONAME</span>
+                    </div>
+                    <button class="px-4 py-2 text-sm font-medium text-white bg-green-500 hover:bg-green-600 rounded-full transition-colors duration-200">
+                        Đặt lịch
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3: Specific Match with Date -->
+            <div class="card-container">
+                <div class="image-overlay" style="background-image: url('https://placehold.co/600x400/94a3b8/fff?text=Soccer')">
+                    <span class="badge badge-hot z-10">HOT</span>
+                    <div class="absolute bottom-4 left-4 z-10 flex items-center gap-2 text-white">
+                        <img src="https://placehold.co/24x24/000000/fff?text=%23" alt="Icon" class="icon w-6 h-6 rounded-full">
+                        <p class="font-bold">Team E vs Team F</p>
+                    </div>
+                </div>
+                <div class="p-4 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.555 13.911l-1.465-1.465a1 1 0 010-1.414l5.657-5.657a1 1 0 011.414 0l1.465 1.465a1 1 0 010 1.414L7.414 12.5a1 1 0 01-1.414 0l-1.445-1.445a1 1 0 010-1.414L4.852 9.07a1 1 0 011.414 0l5.657 5.657a1 1 0 010 1.414l-1.465 1.465a1 1 0 01-1.414 0L5.555 13.911z"></path>
+                        </svg>
+                        <span class="text-sm text-gray-900 font-bold">Date</span>
+                    </div>
+                    <button class="px-4 py-2 text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-600 rounded-full transition-colors duration-200">
+                        Đặt lịch
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Card 4: Another Match -->
+            <div class="card-container">
+                <div class="image-overlay" style="background-image: url('https://placehold.co/600x400/2563eb/fff?text=Basketball')">
+                    <span class="badge badge-hot z-10">HOT</span>
+                    <div class="absolute bottom-4 left-4 z-10 flex items-center gap-2 text-white">
+                        <img src="https://placehold.co/24x24/000000/fff?text=%23" alt="Icon" class="icon w-6 h-6 rounded-full">
+                        <p class="font-bold">Team G vs Team H</p>
+                    </div>
+                </div>
+                <div class="p-4 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.555 13.911l-1.465-1.465a1 1 0 010-1.414l5.657-5.657a1 1 0 011.414 0l1.465 1.465a1 1 0 010 1.414L7.414 12.5a1 1 0 01-1.414 0l-1.445-1.445a1 1 0 010-1.414L4.852 9.07a1 1 0 011.414 0l5.657 5.657a1 1 0 010 1.414l-1.465 1.465a1 1 0 01-1.414 0L5.555 13.911z"></path>
+                        </svg>
+                        <span class="text-sm text-gray-900 font-bold">BLV NONAME</span>
+                    </div>
+                    <button class="px-4 py-2 text-sm font-medium text-white bg-gray-900 hover:bg-blue-600 rounded-full transition-colors duration-200">
+                        Đặt lịch
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 5: Another Live Match -->
+            <div class="card-container">
+                <div class="image-overlay" style="background-image: url('https://placehold.co/600x400/94a3b8/fff?text=Soccer')">
+                    <span class="badge badge-hot z-10">HOT</span>
+                    <span class="badge badge-live bottom-2 right-2 top-auto z-10">LIVE</span>
+                    <div class="absolute bottom-4 left-4 z-10 flex items-center gap-2 text-white">
+                        <img src="https://placehold.co/24x24/000000/fff?text=%23" alt="Icon" class="icon w-6 h-6 rounded-full">
+                        <p class="font-bold">Team I vs Team J</p>
+                    </div>
+                </div>
+                <div class="p-4 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.555 13.911l-1.465-1.465a1 1 0 010-1.414l5.657-5.657a1 1 0 011.414 0l1.465 1.465a1 1 0 010 1.414L7.414 12.5a1 1 0 01-1.414 0l-1.445-1.445a1 1 0 010-1.414L4.852 9.07a1 1 0 011.414 0l5.657 5.657a1 1 0 010 1.414l-1.465 1.465a1 1 0 01-1.414 0L5.555 13.911z"></path>
+                        </svg>
+                        <span class="text-sm text-gray-900 font-bold">BLV NONAME</span>
+                    </div>
+                    <button class="px-4 py-2 text-sm font-medium text-white bg-gray-900 hover:bg-blue-600 rounded-full transition-colors duration-200">
+                        Đặt lịch
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 6: Live Match -->
+            <div class="card-container">
+                <div class="image-overlay" style="background-image: url('https://placehold.co/600x400/2563eb/fff?text=Basketball')">
+                    <span class="badge badge-hot z-10">HOT</span>
+                    <span class="badge badge-live bottom-2 right-2 top-auto z-10">LIVE</span>
+                    <div class="absolute bottom-4 left-4 z-10 flex items-center gap-2 text-white">
+                        <img src="https://placehold.co/24x24/000000/fff?text=%23" alt="Icon" class="icon w-6 h-6 rounded-full">
+                        <p class="font-bold">Team K vs Team L</p>
+                    </div>
+                </div>
+                <div class="p-4 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.555 13.911l-1.465-1.465a1 1 0 010-1.414l5.657-5.657a1 1 0 011.414 0l1.465 1.465a1 1 0 010 1.414L7.414 12.5a1 1 0 01-1.414 0l-1.445-1.445a1 1 0 010-1.414L4.852 9.07a1 1 0 011.414 0l5.657 5.657a1 1 0 010 1.414l-1.465 1.465a1 1 0 01-1.414 0L5.555 13.911z"></path>
+                        </svg>
+                        <span class="text-sm text-gray-900 font-bold">BLV NONAME</span>
+                    </div>
+                    <button class="px-4 py-2 text-sm font-medium text-white bg-gray-900 hover:bg-blue-600 rounded-full transition-colors duration-200">
+                        View
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 7: Upcoming Match (Scheduled) -->
+            <div class="card-container">
+                <div class="image-overlay" style="background-image: url('https://placehold.co/600x400/10b981/fff?text=eSports')">
+                    <span class="badge badge-hot z-10">HOT</span>
+                    <div class="absolute bottom-4 left-4 z-10 flex items-center gap-2 text-white">
+                        <img src="https://placehold.co/24x24/000000/fff?text=%23" alt="Icon" class="icon w-6 h-6 rounded-full">
+                        <p class="font-bold">Team M vs Team N</p>
+                    </div>
+                </div>
+                <div class="p-4 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.555 13.911l-1.465-1.465a1 1 0 010-1.414l5.657-5.657a1 1 0 011.414 0l1.465 1.465a1 1 0 010 1.414L7.414 12.5a1 1 0 01-1.414 0l-1.445-1.445a1 1 0 010-1.414L4.852 9.07a1 1 0 011.414 0l5.657 5.657a1 1 0 010 1.414l-1.465 1.465a1 1 0 01-1.414 0L5.555 13.911z"></path>
+                        </svg>
+                        <span class="text-sm text-gray-900 font-bold">BLV NONAME</span>
+                    </div>
+                    <button class="px-4 py-2 text-sm font-medium text-white bg-green-500 hover:bg-green-600 rounded-full transition-colors duration-200">
+                        Đặt lịch
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 8: Specific Match with Date -->
+            <div class="card-container">
+                <div class="image-overlay" style="background-image: url('https://placehold.co/600x400/94a3b8/fff?text=Soccer')">
+                    <span class="badge badge-hot z-10">HOT</span>
+                    <div class="absolute bottom-4 left-4 z-10 flex items-center gap-2 text-white">
+                        <img src="https://placehold.co/24x24/000000/fff?text=%23" alt="Icon" class="icon w-6 h-6 rounded-full">
+                        <p class="font-bold">Team O vs Team P</p>
+                    </div>
+                </div>
+                <div class="p-4 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.555 13.911l-1.465-1.465a1 1 0 010-1.414l5.657-5.657a1 1 0 011.414 0l1.465 1.465a1 1 0 010 1.414L7.414 12.5a1 1 0 01-1.414 0l-1.445-1.445a1 1 0 010-1.414L4.852 9.07a1 1 0 011.414 0l5.657 5.657a1 1 0 010 1.414l-1.465 1.465a1 1 0 01-1.414 0L5.555 13.911z"></path>
+                        </svg>
+                        <span class="text-sm text-gray-900 font-bold">Date</span>
+                    </div>
+                    <button class="px-4 py-2 text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-600 rounded-full transition-colors duration-200">
+                        Book
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Card 9: Another Match -->
+            <div class="card-container">
+                <div class="image-overlay" style="background-image: url('https://placehold.co/600x400/2563eb/fff?text=Basketball')">
+                    <span class="badge badge-hot z-10">HOT</span>
+                    <div class="absolute bottom-4 left-4 z-10 flex items-center gap-2 text-white">
+                        <img src="https://placehold.co/24x24/000000/fff?text=%23" alt="Icon" class="icon w-6 h-6 rounded-full">
+                        <p class="font-bold">Team P vs Team R</p>
+                    </div>
+                </div>
+                <div class="p-4 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.555 13.911l-1.465-1.465a1 1 0 010-1.414l5.657-5.657a1 1 0 011.414 0l1.465 1.465a1 1 0 010 1.414L7.414 12.5a1 1 0 01-1.414 0l-1.445-1.445a1 1 0 010-1.414L4.852 9.07a1 1 0 011.414 0l5.657 5.657a1 1 0 010 1.414l-1.465 1.465a1 1 0 01-1.414 0L5.555 13.911z"></path>
+                        </svg>
+                        <span class="text-sm text-gray-900 font-bold">BLV NONAME</span>
+                    </div>
+                    <button class="px-4 py-2 text-sm font-medium text-white bg-gray-900 hover:bg-blue-600 rounded-full transition-colors duration-200">
+                        Đặt lịch
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 10: Another Live Match -->
+            <div class="card-container">
+                <div class="image-overlay" style="background-image: url('https://placehold.co/600x400/94a3b8/fff?text=Soccer')">
+                    <span class="badge badge-hot z-10">HOT</span>
+                    <span class="badge badge-live bottom-2 right-2 top-auto z-10">LIVE</span>
+                    <div class="absolute bottom-4 left-4 z-10 flex items-center gap-2 text-white">
+                        <img src="https://placehold.co/24x24/000000/fff?text=%23" alt="Icon" class="icon w-6 h-6 rounded-full">
+                        <p class="font-bold">Team S vs Team T</p>
+                    </div>
+                </div>
+                <div class="p-4 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.555 13.911l-1.465-1.465a1 1 0 010-1.414l5.657-5.657a1 1 0 011.414 0l1.465 1.465a1 1 0 010 1.414L7.414 12.5a1 1 0 01-1.414 0l-1.445-1.445a1 1 0 010-1.414L4.852 9.07a1 1 0 011.414 0l5.657 5.657a1 1 0 010 1.414l-1.465 1.465a1 1 0 01-1.414 0L5.555 13.911z"></path>
+                        </svg>
+                        <span class="text-sm text-gray-900 font-bold">BLV NONAME</span>
+                    </div>
+                    <button class="px-4 py-2 text-sm font-medium text-white bg-gray-900 hover:bg-blue-600 rounded-full transition-colors duration-200">
+                        Đặt lịch
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        
+    </div>
+
+</body>
+</html>

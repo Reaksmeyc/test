@@ -1,0 +1,526 @@
+body {
+    background: #cfcfcf;
+}
+
+/* Navbar wrapper */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, #000, #d4af37);
+    padding: 10px 20px;
+    color: #fff;
+}
+
+/* Left side: logo + menu */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 38px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-item {
+    position: relative;
+    padding: 6px 14px;
+    background: #d4af37;
+    border-radius: 20px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu-item:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* Dropdown */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 160px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown a:last-child {
+    border-bottom: none;
+}
+
+.dropdown a:hover {
+    background: #f5f5f5;
+}
+
+.menu-item:hover .dropdown {
+    display: block;
+}
+
+.top-secondary-title {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Right side */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: midnightblue;
+    border-radius: 40px;
+    padding: 4px;
+}
+
+.coin-box {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    color: #000;
+    padding: 6px 14px;
+    border-radius: 25px;
+    font-weight: bold;
+    gap: 4px;
+    box-shadow: inset 2px 2px 5px #bbb, inset -2px -2px 5px #fff;
+}
+
+.plus-btn {
+    background: #d4af37;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.icon {
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.badge4 {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: red;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 5px;
+    border-radius: 10px;
+}
+
+/* Profile dropdown */
+.profile {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #d4af37;
+    padding: 6px 6px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.profile img {
+    border-radius: 50%;
+    border: 2px solid gold;
+}
+
+.account-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 6px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: none;
+    min-width: 200px;
+    z-index: 1000;
+}
+
+.account-menu a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+}
+
+.account-menu a:last-child {
+    border-bottom: none;
+}
+
+.account-menu a:hover {
+    background: #f5f5f5;
+}
+
+.profile:hover .account-dropdown {
+    display: block;
+}
+
+/* Secondary menu */
+.secondary-menu {
+    background: #000;
+    padding: 5px 20px;
+}
+
+.secondary-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 55px;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondary-menu ul li a {
+    text-decoration: none;
+    color: #d4af37;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.secondary-menu ul li a:hover {
+    color: #fff;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 6px 12px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    gap: 6px;
+}
+
+.lang-btn:hover {
+    display: flex;
+    align-items: center;
+    background: gold;
+    color: gold;
+    padding: 6px 12px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    gap: 6px;
+}
+
+.lang-btn img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.toggle {
+    background: linear-gradient(to right, #d4af37, #333);
+    width: 60px;
+    height: 28px;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle::before {
+    content: "☀️";
+    position: absolute;
+    left: 6px;
+    top: 3px;
+    font-size: 16px;
+}
+
+.coin-dropdown-container {
+    position: relative;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+.coin-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    color: #000;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    position: relative;
+}
+
+.close-btn {
+    background: #ffcc00;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.coin-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #4c4c4c;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.coin-dropdown-container.active .coin-dropdown-menu {
+    max-height: 300px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.coin-item {
+    border-bottom: 1px solid #5c5c5c;
+}
+
+.coin-item:hover {
+    background-color: #5c5c5c;
+}
+
+.coin-icon {
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-color: #dc3545;
+    border-radius: 50%;
+}
+
+.add-more-btn {
+    color: #fff;
+    font-weight: bold;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.plus-icon {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.add-more-btn:hover {
+    background-color: #5c5c5c;
+}
+
+
+/* Desktop only */
+@media (min-width: 768px) {
+
+    .mobile-header,
+    .mobile-icons {
+        display: none !important;
+    }
+
+    .navbar,
+    .secondary-menu {
+        display: inline-masonry !important;
+    }
+}
+
+/* Mobile only */
+@media (max-width: 767.98px) {
+
+    .navbar,
+    .secondary-menu {
+        display: none !important;
+    }
+
+    .menu-icon {
+        font-size: 26px;
+        cursor: pointer;
+        color: bisque;
+    }
+
+    .lang-btn {
+        background: #d4af37;
+        color: bisque;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+    }
+
+    .lang-btn img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .mobile-icons img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .toggle {
+        width: 60px;
+        height: 28px;
+    }
+}
+
+.mobile-menu {
+    background: #000;
+    padding: 10px 20px;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-menu ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.mobile-menu ul li a {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+}
+
+.mobile-menu ul li a:hover {
+    color: white;
+}
+
+
+.card-container {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: #d4af37;
+    /* Yellow background */
+    /* Add padding for slick's slide margin/padding to work correctly */
+    margin: 10px;
+}
+
+.card-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.image-overlay {
+    position: relative;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.image-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.badge-live {
+    background-color: #ef4444;
+    color: #fff;
+    border-radius: 4px;
+    padding: 2px 8px;
+    text-transform: capitalize;
+    top: auto;
+    bottom: 10px;
+}
+
+.badge-hot {
+    background-color: #dc2626;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.icon {
+    filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
+}
+
+/* Adjust slick-specific styles for better integration with your design */
+.slick-prev,
+.slick-next {
+    z-index: 50;
+}
+
+/* Make the arrows a little easier to see */
+.slick-prev:before,
+.slick-next:before {
+    color: #000 !important;
+    font-size: 30px !important;
+}
